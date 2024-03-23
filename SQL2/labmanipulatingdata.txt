@@ -1,0 +1,23 @@
+SQL> SELECT * FROM GHC_DEPARTMENT;
+
+   DEPT_NO DEPT_NAME                                                            
+---------- --------------------                                                 
+       100 Astrophysics                                                         
+
+SQL> SELECT * FROM GHC_COURSE;
+
+COURSE_ COURSE_TITLE                                                    CREDITS 
+------- ------------------------------------------------------------ ---------- 
+APHY202 The Solar System                                                      5 
+APHY302 Nebula                                                                5 
+APHY204 Global Clusters                                                       5 
+
+SQL> SELECT * FROM GHC_FACULTY;
+
+no rows selected
+
+SQL> SELECT * FROM GHC_EXPERTISE;
+
+no rows selected
+
+SQL> SPOOL OFF

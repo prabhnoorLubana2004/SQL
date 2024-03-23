@@ -1,0 +1,90 @@
+SQL> SELECT agent_id AS "Agent ID",
+  2         last_name AS "Last Name",
+  3         first_name AS "First Name",
+  4         agent_level AS "Agent Level",
+  5         agent_speciality AS "Specialization"
+  6  FROM rcv_agent
+  7  WHERE agent_level IN ('III', 'IV')
+  8    AND agent_speciality <> 'CA'
+  9  ORDER BY last_name;
+
+  Agent ID Last Name  First Name Agen Specializa                                
+---------- ---------- ---------- ---- ----------                                
+         2 Chapman    Anna       III  EU                                        
+         4 Plume      Valerie    IV   US                                        
+
+SQL> SELECT tour_code AS "Tour Code",
+  2         tour_description AS "Description",
+  3         tour_region AS "Region",
+  4         rating_code AS "Rating"
+  5  FROM rcv_vacation_tour
+  6  WHERE (tour_description LIKE '%Paris%')
+  7    AND (rating_code IN ('E', 'M'))
+  8  ORDER BY tour_description;
+
+ Tour Code Description                                        Re R              
+---------- -------------------------------------------------- -- -              
+         2 Paris Culture Tour                                 EU M              
+         1 Paris Highlights                                   EU E              
+
+SQL> select country, dest_description from rcv_destination
+  2  where(country in ('United States', 'Canada'))
+  3  order by country, dest_description;
+
+COUNTRY                                     DEST_DESCRIPTION                                                                
+------------------------------------------- ---------------------------------------------------------------------------------------------                                                                                                                                                                                 
+Canada                                      2-Hour Horseback Trail Ride in Kananaskis                                                                                                                
+Canada                                      Blackshale Suspension Bridge & Sightseeing Tour                                                                                                                   
+Canada                                      Calgary City Sightseeing Tour                                                                                                                                                                     
+Canada                                      Calgary Stampede - Chuckwagon Races and Grandstand Show                                                                                                                    
+Canada                                      Calgary Stampede - Day pass Rodeo                                                                                                                    
+Canada                                      Calgary to Royal Tyrell Museum | Drumheller | Badland – Private Sightseeing Tour                                                                                                           
+Canada                                      Cycling the Bow                                                                                                                                                                                
+Canada                                      Heritage Park - the 1883 experience                                                                                                                 
+Canada                                      Lake Louise & Yoho N.P & Moraine Lake 1-Day Tour from Calgary or Banff                                                                                                                        
+Canada                                      Rock climbing at COP                                                                                                                  
+Canada                                      Rocky Mountaineer - 3 Day Train Adventure                                                                                                                       
+Canada                                      Sulfur Mountain Gondola and Banff Hot Springs                                                                                                                 
+Canada                                      Voyageur Canoe Tour                                                                                           
+United States                               ATV / UTV Riding - 28-Mile Jackrabbit Tour for 2 Riders                                                                                                                                                                           
+United States                               Beginner Group Rock Climbing in Joshua Tree National Park                                          
+United States                               Disneyland 2-Day Park Hopper Ticket                                                                                                                                                     
+United States                               Earthquake Canyon Express Downhill Bicycle Adventure                                                                                                                    
+United States                               Modern & More Bike Tours Palm Springs                                                                                                                                                       
+United States                               Palm Springs Art Museum Guided Tour                                                                                                                    
+United States                               Palm Springs On/Off City Tour                                                                                                                    
+United States                               Palm Springs Windmill Tours                                                                                                                  
+United States                               Private Dolphin and Whale Watching Tour in Newport Beach                                                                                                                    
+United States                               Private French-Inspired Cooking Class with a Fun Local in Palm Springs, CA                                                                                                                  
+United States                               Private Surf Lesson Newport Beach, California                                                                                                                        
+United States                               San Andreas Fault Jeep Tour from Palm Desert                                     
+                                 
+                                                                                
+25 rows selected.
+
+SQL> SET LINESIZE 100
+SQL> COLUMN "Agent ID" FORMAT A10
+SQL> COLUMN "Last Name" FORMAT A20
+SQL> COLUMN "First Name" FORMAT A20
+SQL> COLUMN "Agent Level" FORMAT A5
+SQL> COLUMN "Specialization" FORMAT A30
+SQL> -- Execute the first query here
+SQL> CLEAR COLUMNS
+columns cleared
+SQL> 
+SQL> SET LINESIZE 80
+SQL> COLUMN "Tour ID" FORMAT A10
+SQL> COLUMN "Description" FORMAT A40
+SQL> COLUMN "Difficulty" FORMAT A5
+SQL> -- Execute the second query here
+SQL> CLEAR COLUMNS
+columns cleared
+SQL> 
+SQL> SET LINESIZE 120
+SQL> COLUMN "Destination ID" FORMAT A15
+SQL> COLUMN "Description" FORMAT A40
+SQL> COLUMN "Country" FORMAT A10
+SQL> -- Execute the third query here
+SQL> CLEAR COLUMNS
+columns cleared
+SQL> SPOOL OFF

@@ -1,0 +1,123 @@
+SQL> -- Describe tables
+SQL> SPOOL c:\cprg250s\loadingoutput.txt
+SQL> SET HEADING OFF
+SQL> SET FEEDBACK OFF
+SQL> SET PAGESIZE 0
+SQL>
+SQL> -- Describe each table
+SQL> DESCRIBE Customer;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTOMER_ID                               NOT NULL NUMBER
+ FIRST_NAME                                NOT NULL VARCHAR2(50)
+ SURNAME                                   NOT NULL VARCHAR2(50)
+ EMAIL_ADDRESS                             NOT NULL VARCHAR2(100)
+ CREDIT_CARD_NUMBER                                 VARCHAR2(16)
+ CREDIT_CARD_TYPE                                   VARCHAR2(2)
+ FULL_ADDRESS                              NOT NULL VARCHAR2(500)
+ POSTAL_CODE                                        VARCHAR2(7)
+ PHONE_NUMBER                                       VARCHAR2(12)
+
+SQL> DESCRIBE Movie;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MOVIE_ID                                  NOT NULL NUMBER
+ TITLE                                     NOT NULL VARCHAR2(100)
+ DURATION_IN_MINUTES                       NOT NULL NUMBER
+ IS_NEW_RELEASE                                     NUMBER(1)
+ IS_MOST_POPULAR                                    NUMBER(1)
+ IS_COMING_SOON                                     NUMBER(1)
+ SD_PRICE                                  NOT NULL NUMBER(6,2)
+ HD_PRICE                                  NOT NULL NUMBER(6,2)
+ RATING                                             VARCHAR2(10)
+
+SQL> DESCRIBE Director;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DIRECTOR_ID                               NOT NULL NUMBER
+ FIRST_NAME                                NOT NULL VARCHAR2(50)
+ LAST_NAME                                 NOT NULL VARCHAR2(50)
+ DATE_OF_BIRTH                             NOT NULL DATE
+ EMAIL_ADDRESS                             NOT NULL VARCHAR2(100)
+
+SQL> DESCRIBE Actor_Actress;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACTOR_ACTRESS_ID                          NOT NULL NUMBER(38)
+ NAME                                      NOT NULL VARCHAR2(100)
+
+SQL> DESCRIBE Rental;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ RENTAL_ID                                 NOT NULL NUMBER
+ CUSTOMER_ID                                        NUMBER
+ MOVIE_ID                                           NUMBER
+ RENTAL_DATE                               NOT NULL DATE
+ START_VIEWING_DATE                        NOT NULL DATE
+ EXPIRY_DATE                               NOT NULL DATE
+ AMOUNT_PAID                               NOT NULL NUMBER(6,2)
+ CREDIT_CARD_CHARGED                                VARCHAR2(16)
+ CREDIT_CARD_TYPE                                   VARCHAR2(2)
+ CUSTOMER_RATING                                    NUMBER(1,5)
+
+SQL> DESCRIBE Wishlist;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CUSTOMER_ID                               NOT NULL NUMBER
+ MOVIE_ID                                  NOT NULL NUMBER
+ ADDED_DATE                                NOT NULL DATE
+
+SQL> DESCRIBE Category;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CATEGORY_ID                               NOT NULL NUMBER
+ CATEGORY_NAME                             NOT NULL VARCHAR2(50)
+ PARENT_CATEGORY_ID                                 NUMBER
+
+SQL> DESCRIBE Advisory;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ADVISORY_ID                               NOT NULL NUMBER
+ SHORT_DESCRIPTION                         NOT NULL VARCHAR2(100)
+ FULL_DESCRIPTION                          NOT NULL VARCHAR2(500)
+
+SQL>
+SQL> SET HEADING ON
+SQL> SET FEEDBACK ON
+SQL> SET PAGESIZE 14
+SQL>
+SQL> -- Query table contents
+SQL> SELECT * FROM Customer;
+
+no rows selected
+
+SQL> SELECT * FROM Movie;
+
+no rows selected
+
+SQL> SELECT * FROM Director;
+
+no rows selected
+
+SQL> SELECT * FROM Actor_Actress;
+
+no rows selected
+
+SQL> SELECT * FROM Rental;
+
+no rows selected
+
+SQL> SELECT * FROM Wishlist;
+
+no rows selected
+
+SQL> SELECT * FROM Category;
+
+no rows selected
+
+SQL> SELECT * FROM Advisory;
+
+no rows selected
+
+SQL>
+SQL> SPOOL OFF
